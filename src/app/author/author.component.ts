@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-author',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./author.component.scss']
 })
 export class AuthorComponent implements OnInit {
-
-  constructor() { }
+  title = 'About';
+  constructor(private titleService: Title,
+              private sharedService: SharedService
+) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle(`${this.title} - ${this.sharedService.blogTitle}`);
   }
 
 }

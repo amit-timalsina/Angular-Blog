@@ -1,1 +1,9 @@
-<p>nav-bar works!</p>
+<header>
+    <div class="title">
+        <a routerLink="">My Fancy blog</a>
+    </div>
+    <nav class="navbar">
+        <a [routerLink]="['/articles']" class="nav-item">Articles</a>
+        <a [routerLink]="['/author']" class="nav-item">About</a>
+    </nav>
+</header>
